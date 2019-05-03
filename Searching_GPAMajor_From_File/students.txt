@@ -1,0 +1,16 @@
+111AB 4.0 Business Administration
+12AB1 3.2 Communications
+134EK 3.7 Political Science
+2ABCD 2.5 Marketing
+333XY 3.9 Computer Science
+516BC 2.8 Biology
+517BC 3.1 Nursing
+9QWE9 3.4 Psychology
+AC234 3.9 Marketing
+AJ222 3.2 Computer Science
+AK323 3.1 Political Science
+DH232 4.0 Elementary Education
+DR123 2.7 Criminal Justice
+JP200 3.8 Nursing
+SW111 4.0 Criminal Justice
+TY4XZ 2.3 Business Administration
