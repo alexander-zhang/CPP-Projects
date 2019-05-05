@@ -2,10 +2,10 @@
  Name: Alexander Zhang
  IDE: Xcode
  
- This assignment required me to read data from file "students.txt" into parallel arrays,
- display the major and GPA, and then output the data to file "out.txt" with the number
- of times each ID was searched for.
- Loops until the user is finished using the program.
+ This assignment had me make a program which reads in a table from a file and determine if the table
+ is a perfect square. The first number in the file is the size of one side.
+ If the table has a side of 8 or less, the table is outputted. If larger, it is not outputted.
+ The file name, whether it is a perfect square, and the constant are all outputted.
  */
 
 #include <iostream>
@@ -171,6 +171,7 @@ void printTable(const int table[][MAXTBLSIZE], int size, string filename)
     cout << "File name: " << filename << endl; // consistent to output this every time. clear to user.
     cout << "Square Table Size: " << size << endl;
     
+    cout << "-"; // leading em-dash to match length of table
     for (int i = 0; i < size; i++) // leading ceiling
         cout << "----"; // 4 dashes per number in row
     cout << endl;
@@ -180,17 +181,12 @@ void printTable(const int table[][MAXTBLSIZE], int size, string filename)
         cout << "|"; // leading wall
         for (int c = 0; c < size; c++)
         {
-            if (c == 0) // example has first element of row with one less space.
-            {
-                cout << setw(2) << table[r][c] << "|";
-            }
-            else
-            {
+
                 cout << setw(3) << table[r][c] << "|";
-            }
         }
         cout << endl;
         
+        cout << "-"; // used to match length of table
         for (int i = 0; i < size; i++)
             cout << "----"; // 4 dashes per number in row
         cout << endl;
@@ -205,7 +201,7 @@ void printTable(const int table[][MAXTBLSIZE], int size, string filename)
 // table is not a perfect square.
 // returns nothing.
 //***********************************************************************
-void printResults(int constant, string filename, int size) // pass filename or else the output is very unclear
+void printResults(int constant, string filename, int size) // pass filename to give info to user
 {
     if (size <= 8) // only does this if the table is outputted
     {
@@ -236,47 +232,47 @@ void printResults(int constant, string filename, int size) // pass filename or e
 /** Save the output below
  File name: t0.txt
  Square Table Size: 4
- ----------------
- |16|  3|  2| 13|
- ----------------
- | 5| 10| 11|  8|
- ----------------
- | 9|  6|  7| 12|
- ----------------
- | 4| 15| 14|  1|
- ----------------
+ -----------------
+ | 16|  3|  2| 13|
+ -----------------
+ |  5| 10| 11|  8|
+ -----------------
+ |  9|  6|  7| 12|
+ -----------------
+ |  4| 15| 14|  1|
+ -----------------
  This is a Perfect Square Table with a constant of 34!
  
  Please enter 1 to continue or 0 to stop: 1
  
  File name: t1.txt
  Square Table Size: 4
- ----------------
- |16|  3|  2| 13|
- ----------------
- | 5| 10| 11|  8|
- ----------------
- | 9|  6|  7| 12|
- ----------------
- | 4| 15|  1| 14|
- ----------------
+ -----------------
+ | 16|  3|  2| 13|
+ -----------------
+ |  5| 10| 11|  8|
+ -----------------
+ |  9|  6|  7| 12|
+ -----------------
+ |  4| 15|  1| 14|
+ -----------------
  This is not a Perfect Square Table
  
  Please enter 1 to continue or 0 to stop: 1
  
  File name: t2.txt
  Square Table Size: 5
- --------------------
- | 3| 16|  9| 22| 15|
- --------------------
- |20|  8| 21| 14|  2|
- --------------------
- | 7| 25| 13|  1| 19|
- --------------------
- |24| 12|  5| 18|  6|
- --------------------
- |11|  4| 17| 10| 23|
- --------------------
+ ---------------------
+ |  3| 16|  9| 22| 15|
+ ---------------------
+ | 20|  8| 21| 14|  2|
+ ---------------------
+ |  7| 25| 13|  1| 19|
+ ---------------------
+ | 24| 12|  5| 18|  6|
+ ---------------------
+ | 11|  4| 17| 10| 23|
+ ---------------------
  This is a Perfect Square Table with a constant of 65!
  
  Please enter 1 to continue or 0 to stop: 1
@@ -286,19 +282,19 @@ void printResults(int constant, string filename, int size) // pass filename or e
  
  File name: t3.txt
  Square Table Size: 6
- ------------------------
- |35|  1|  6| 26| 19| 24|
- ------------------------
- | 3| 32|  7| 21| 23| 25|
- ------------------------
- |31|  9|  2| 22| 27| 20|
- ------------------------
- | 8| 28| 33| 17| 10| 15|
- ------------------------
- |30|  5| 34| 12| 14| 16|
- ------------------------
- | 4| 36| 29| 13| 11| 18|
- ------------------------
+ -------------------------
+ | 35|  1|  6| 26| 19| 24|
+ -------------------------
+ |  3| 32|  7| 21| 23| 25|
+ -------------------------
+ | 31|  9|  2| 22| 27| 20|
+ -------------------------
+ |  8| 28| 33| 17| 10| 15|
+ -------------------------
+ | 30|  5| 34| 12| 14| 16|
+ -------------------------
+ |  4| 36| 29| 13| 11| 18|
+ -------------------------
  This is not a Perfect Square Table
  
  Please enter 1 to continue or 0 to stop: 1
@@ -319,5 +315,4 @@ void printResults(int constant, string filename, int size) // pass filename or e
  Error: Input file "t7.txt" not found!
  All done!
  Program ended with exit code: 0
- 
  */
